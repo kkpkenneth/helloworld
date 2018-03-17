@@ -85,15 +85,24 @@ h1 {
 <div class="main">
 
 <h1>HelloWorld</h1>
+<img src="pictures/banner1.jpg" alt="banner1" width="100%">
 <hr>
 
-<h2>PORTFOLIO</h2>
+<h2>COURSES</h2>
 
 <div id="myBtnContainer">
+<button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('kids')"> Kids 5-7</button>
+  <button class="btn" onclick="filterSelection('junior')"> Junior 7-10</button>
+  <button class="btn" onclick="filterSelection('teens')"> Teens 11-15</button>
+  <button class="btn" onclick="filterSelection('adult')"> Adults</button>
+	<br>
+	<br>
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
   <button class="btn" onclick="filterSelection('nature')"> Nature</button>
   <button class="btn" onclick="filterSelection('cars')"> Cars</button>
   <button class="btn" onclick="filterSelection('people')"> People</button>
+  <button class="btn" onclick="filterSelection('food')"> Food</button>
 </div>
 
 <!-- Portfolio Gallery Grid -->
@@ -101,7 +110,7 @@ h1 {
   <div class="column nature">
     <div class="content">
       <img src="/w3images/mountains.jpg" alt="Mountains" style="width:100%">
-      <h4>Mountains</h4>
+      <h4>Game Development</h4>
       <p>Lorem ipsum dolor..</p>
     </div>
   </div>
@@ -167,6 +176,10 @@ h1 {
 </div>
 
 <!-- END MAIN -->
+<hr>
+<li> about us </li>
+<li> courses </li>
+<li> contact us </li>
 </div>
 
 <script>
