@@ -73,8 +73,14 @@ h1 {
   background-color: #ddd;
 }
 
-.btn.active {
+.btn.active2 {
   background-color: #666;
+  color: white;
+}
+
+
+.btn.active {
+  background-color: #966;
   color: white;
 }
 </style>
@@ -91,13 +97,15 @@ h1 {
 <h2>COURSES</h2>
 
 <div id="myBtnContainer">
-<button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('kids')"> Kids 5-7</button>
-  <button class="btn" onclick="filterSelection('junior')"> Junior 7-10</button>
-  <button class="btn" onclick="filterSelection('teens')"> Teens 11-15</button>
-  <button class="btn" onclick="filterSelection('adult')"> Adults</button>
+<button class="btn active2" onclick="filterSelection2('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection2('kids')"> Kids 5-7</button>
+  <button class="btn" onclick="filterSelection2('junior')"> Junior 7-10</button>
+  <button class="btn" onclick="filterSelection2('teens')"> Teens 11-15</button>
+  <button class="btn" onclick="filterSelection2('adult')"> Adults</button>
+  </div>
 	<br>
 	<br>
+<div id="myBtnContainer2">
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
   <button class="btn" onclick="filterSelection('nature')"> Nature</button>
   <button class="btn" onclick="filterSelection('cars')"> Cars</button>
@@ -114,14 +122,14 @@ h1 {
       <p>Lorem ipsum dolor..</p>
     </div>
   </div>
-  <div class="column nature">
+  <div class="column nature kids">
     <div class="content">
     <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
       <h4>Lights</h4>
       <p>Lorem ipsum dolor..</p>
     </div>
   </div>
-  <div class="column nature">
+  <div class="column nature junior">
     <div class="content">
     <img src="/w3images/nature.jpg" alt="Nature" style="width:100%">
       <h4>Forest</h4>
@@ -129,7 +137,7 @@ h1 {
     </div>
   </div>
   
-  <div class="column cars">
+  <div class="column cars teens">
     <div class="content">
       <img src="/w3images/cars1.jpg" alt="Car" style="width:100%">
       <h4>Retro</h4>
@@ -165,7 +173,7 @@ h1 {
       <p>Lorem ipsum dolor..</p>
     </div>
   </div>
-  <div class="column people">
+  <div class="column food">
     <div class="content">
     <img src="/w3images/people3.jpg" alt="Car" style="width:100%">
       <h4>Woman</h4>
@@ -185,6 +193,17 @@ h1 {
 <script>
 filterSelection("all")
 function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+filterSelection2("all")
+function filterSelection2(c) {
   var x, i;
   x = document.getElementsByClassName("column");
   if (c == "all") c = "";
@@ -217,7 +236,8 @@ function w3RemoveClass(element, name) {
 
 
 // Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
+
+var btnContainer = document.getElementById("myBtnContainer2");
 var btns = btnContainer.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function(){
@@ -226,6 +246,18 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current1 = document.getElementsByClassName("active2");
+    current1[0].className = current1[0].className.replace(" active2", "");
+    this.className += " active2";
+  });
+}
+
+
 </script>
 
 </body>
