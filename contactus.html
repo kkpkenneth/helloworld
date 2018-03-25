@@ -35,7 +35,38 @@ function RemoveAllFilters()
 -->
 </script>
 <style type="text/css">
-<!--
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+}
+ 
+li {
+    float: left;
+}
+ 
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ 
+li a:hover:not(.active) {
+    background-color: #111;
+} 
+.active {
+    background-color: #4CAF50;
+}
+
 .badge {
 	float: left; 
 	margin: 4px;
@@ -51,10 +82,22 @@ function RemoveAllFilters()
 label {
 	font-weight: bold;
 }
--->
+
+body {
+	font-family: Arial;
+}
+
 </style>
 </head>
 <body>
+
+<ul>
+  <li><a href="index.html">Hello World</a></li>
+  <li><a href="courses.html">Courses</a></li>
+  <li><a class="active" href="contactus.html">Contact Us</a></li>
+  <li><a href="aboutus.html">About Us</a></li>
+</ul>
+
 <h3>Multiple Filters Sample</h3>
 <p>This page demonstrates how to use the multiple filter support for data sets.</p>
 <p>Here is a working example that uses multiple filters.</p>
